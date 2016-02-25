@@ -50,9 +50,23 @@ $("#form2 button").click(function() {
 });
 
 // handle the mouseover event here
+$("#mouse img").mouseover(function(){
+  var height = $(this).height();
+  var width = $(this).width();
+  $(this).height(height*1.5);
+  $(this).width(width*1.5);
+});
+$("p").mouseover(function(){
+  $("p").css("background-color","yellow");
+});
+$("p").mouseout(function(){
+  $("p").css("background-color","#E9E9E4");
+});
 
 // handle the form events here
 
 $("#formEvents form").submit(function(event) {
-
+  event.preventDefault();
+  console.log("email :"+ " " + $("#inputEmail3").val());
+  console.log("password :"+ " " + $("#inputPassword3").val());
 });
