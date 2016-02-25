@@ -69,4 +69,40 @@ $("#formEvents form").submit(function(event) {
   event.preventDefault();
   console.log("email :"+ " " + $("#inputEmail3").val());
   console.log("password :"+ " " + $("#inputPassword3").val());
+  console.log("checkbox :"+ " " + $(".checkbox input[type=checkbox]").prop("checked"));
+
+});
+
+// handle animations
+$("#animate1 img").one("mouseover",function(){
+  $(this).animate({
+      width: "70%",
+    }, 1500);
+})
+
+$("#animate2 img").dblclick(function(event) {
+  if($("#animate2 img").css("margin-left")=="800px") {
+     $("#animate2 img").animate({
+      "margin-left": "0px"
+    },500,"swing");
+  }else{
+    $("#animate2 img").animate({
+      "margin-left": "800px"
+    },500,"swing");
+  }
+});
+//fade
+var img3 = $("#animate3 img");
+img3.dblclick(function(){
+  img3.fadeOut("slow",function(){
+    img3.animate(function(){
+       },1000,function(){
+     img3.attr("src","images/cat.png");
+     img3.fadeIn("slow",function(){
+      img3.animate(function(){
+      },1000,"swing");
+    });
+   });
+  });
+
 });
